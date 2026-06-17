@@ -1,0 +1,167 @@
+:root{
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+  --text: #24313a;
+  --muted: #6b7b86;
+  --pink: #ff4b89; /* rosa */
+  --blue: #1755d3; /* azul */
+  --accent: linear-gradient(90deg,var(--pink),var(--blue));
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(36,49,58,0.08);
+  font-family: "Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#fbfbfd,#ffffff);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:16px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+}
+
+/* Container central para celular */
+.container{
+  width:100%;
+  max-width:480px;
+}
+
+/* Header with logo */
+.header{
+  display:flex;
+  justify-content:center;
+  margin-bottom:12px;
+}
+.header img{
+  max-width:220px;
+  width:60%;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+}
+
+/* Cards */
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+  margin-bottom:12px;
+  border: 1px solid rgba(23,85,211,0.06);
+}
+
+/* Hidden helper */
+.hidden{display:none}
+
+/* Typography */
+.title{
+  margin:6px 0 8px;
+  font-size:20px;
+  font-weight:700;
+  color:var(--blue);
+  text-align:center;
+}
+.subtitle{
+  margin:0 0 10px;
+  font-size:14px;
+  color:var(--muted);
+  text-align:center;
+}
+.note{
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+  margin-bottom:14px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  background:transparent;
+  color:var(--blue);
+  box-shadow:none;
+}
+.btn.primary{
+  background:var(--blue);
+  color:#fff;
+  box-shadow: 0 6px 18px rgba(23,85,211,0.14);
+}
+.btn.secondary{
+  background: #f5f8ff;
+  color:var(--blue);
+  border:1px solid rgba(23,85,211,0.06);
+}
+
+/* Quiz layout */
+.progress{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+.question{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.answers{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.answer-btn{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(36,49,58,0.06);
+  background:#fff;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .08s ease, box-shadow .08s ease;
+  font-size:15px;
+}
+.answer-btn:hover{transform:translateY(-2px)}
+.answer-btn.selected{
+  background: linear-gradient(90deg,var(--pink),var(--blue));
+  color:#fff;
+  border:none;
+  box-shadow: 0 8px 18px rgba(23,85,211,0.12);
+}
+.quiz-controls{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+}
+
+/* Result */
+.result-name{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--pink);
+}
+.result-desc{margin:12px 0;color:var(--muted)}
+.result-section{margin-top:10px}
+.result-section h3{margin:6px 0;font-size:14px;color:var(--blue)}
+.result-section ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+.result-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+
+/* Footer */
+.footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:6px;}
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .card{padding:14px;border-radius:12px}
+  .title{font-size:18px}
+  .answer-btn{font-size:14px;padding:10px}
+}
