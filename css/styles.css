@@ -46,6 +46,16 @@ body{
   border-radius:8px;
 }
 
+/* Logo shown on result screen */
+.result-logo{
+  display:block;
+  margin:0 auto 10px;
+  max-width:220px;
+  width:55%;
+  height:auto;
+  object-fit:contain;
+}
+
 /* Cards */
 .card{
   background:var(--card-bg);
@@ -164,4 +174,6 @@ body{
   .card{padding:14px;border-radius:12px}
   .title{font-size:18px}
   .answer-btn{font-size:14px;padding:10px}
+  .header img{width:70%;}
+  .result-logo{width:65%;}
 }
