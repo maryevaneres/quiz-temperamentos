@@ -46,8 +46,8 @@ body{
 .site-logo{
   display:flex;
   align-items:center;
-  gap:14px;
-  justify-content:center;
+  gap:16px;
+  justify-content:flex-start; /* icon left, text right on desktop */
   margin:0 auto 18px auto;
   max-width:100%;
 }
@@ -64,6 +64,7 @@ body{
   display:flex;
   flex-direction:column;
   line-height:1;
+  text-align:left;
 }
 .logo-small{
   font-size:12px;
@@ -201,7 +202,7 @@ body{
   .logo-main{ font-size:26px; }
 }
 @media (max-width:420px){
-  .site-logo{ flex-direction:column; gap:8px; }
+  .site-logo{ flex-direction:column; gap:8px; justify-content:center; }
   .logo-mark{ width:64px; height:64px; flex:0 0 64px; }
   .logo-main{ font-size:18px; text-align:center; }
   .logo-small{ font-size:11px; text-align:center;}

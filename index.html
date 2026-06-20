@@ -13,40 +13,40 @@
 
     <!-- Tela inicial -->
     <section id="start-screen" class="card">
-      <!-- Upgraded logo in HTML/SVG (no external files) -->
+      <!-- Refined logo in HTML/SVG (no external files) -->
       <div class="site-logo" aria-label="Casal na Medida Certa">
         <div class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="110" height="110">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="100" height="100">
+            <!-- left half (pink) and right half (blue) with subtle divider -->
             <defs>
-              <linearGradient id="mark-grad" x1="0" x2="1">
-                <stop offset="0%" stop-color="#e91e78"/>
-                <stop offset="100%" stop-color="#1d4ed8"/>
-              </linearGradient>
-              <filter id="mark-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0b2b4a" flood-opacity="0.14"/>
-              </filter>
+              <clipPath id="circle-clip"><circle cx="60" cy="60" r="58"/></clipPath>
             </defs>
-
-            <!-- outer split circle -->
-            <path d="M70 0 A70 70 0 0 0 70 140 L70 0 Z" fill="#e91e78" />
-            <path d="M70 0 A70 70 0 0 1 70 140 L70 0 Z" fill="#1d4ed8" />
-
-            <!-- white inner ring -->
-            <circle cx="70" cy="70" r="62" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.95" />
-
-            <!-- heart (center) -->
-            <path d="M70 86c-7-5.3-14-10.5-14-17.5C56 56 62 51 70 51s14 5 14 17.5c0 7-7 12.2-14 17.5z" fill="#ffffff" stroke="#e91e78" stroke-width="2" />
-
-            <!-- interlocking rings (union) -->
-            <g transform="translate(0,8)" stroke-linecap="round">
-              <circle cx="56" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <circle cx="84" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <path d="M46 98a10 10 0 0 1 10-10" stroke="#e91e78" stroke-width="2.2" fill="none" opacity="0.95" />
-              <path d="M94 98a10 10 0 0 0-10-10" stroke="#1d4ed8" stroke-width="2.2" fill="none" opacity="0.95" />
+            <g clip-path="url(#circle-clip)">
+              <rect x="0" y="0" width="60" height="120" fill="#e91e78" />
+              <rect x="60" y="0" width="60" height="120" fill="#1d4ed8" />
+              <!-- thin vertical separator -->
+              <rect x="59.2" y="14" width="1.6" height="92" fill="#ffffff" opacity="0.9" />
             </g>
 
-            <!-- subtle center highlight -->
-            <circle cx="70" cy="70" r="2.6" fill="#ffffff" opacity="0.95" />
+            <!-- outer thin white ring -->
+            <circle cx="60" cy="60" r="58" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.95" />
+
+            <!-- centered heart (top/middle) -->
+            <path d="M60 36
+                     c-5.5-4.25-11-8.2-11-13.5
+                     C49 17 54 14 60 14
+                     s11 3 11 8.5
+                     c0 5.3-5.5 9.25-11 13.5z"
+                  fill="#ffffff" />
+
+            <!-- interlocking rings (bottom) -->
+            <g transform="translate(0,18)">
+              <circle cx="46" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <circle cx="74" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <!-- subtle colored hints on rings' outlines -->
+              <path d="M38 74a9 9 0 0 1 9-9" stroke="#e91e78" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+              <path d="M82 74a9 9 0 0 0-9-9" stroke="#1d4ed8" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+            </g>
           </svg>
         </div>
         <div class="logo-text">
@@ -64,21 +64,24 @@
 
     <!-- Tela do quiz -->
     <section id="quiz-screen" class="card hidden" aria-hidden="true">
-      <!-- Upgraded logo in HTML/SVG (no external files) -->
+      <!-- Refined logo in HTML/SVG (no external files) -->
       <div class="site-logo" aria-label="Casal na Medida Certa">
         <div class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="94" height="94">
-            <path d="M70 0 A70 70 0 0 0 70 140 L70 0 Z" fill="#e91e78" />
-            <path d="M70 0 A70 70 0 0 1 70 140 L70 0 Z" fill="#1d4ed8" />
-            <circle cx="70" cy="70" r="62" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.95" />
-            <path d="M70 86c-7-5.3-14-10.5-14-17.5C56 56 62 51 70 51s14 5 14 17.5c0 7-7 12.2-14 17.5z" fill="#ffffff" stroke="#e91e78" stroke-width="2" />
-            <g transform="translate(0,8)" stroke-linecap="round">
-              <circle cx="56" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <circle cx="84" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <path d="M46 98a10 10 0 0 1 10-10" stroke="#e91e78" stroke-width="2.2" fill="none" opacity="0.95" />
-              <path d="M94 98a10 10 0 0 0-10-10" stroke="#1d4ed8" stroke-width="2.2" fill="none" opacity="0.95" />
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="86" height="86">
+            <clipPath id="circle-clip-2"><circle cx="60" cy="60" r="58"/></clipPath>
+            <g clip-path="url(#circle-clip-2)">
+              <rect x="0" y="0" width="60" height="120" fill="#e91e78" />
+              <rect x="60" y="0" width="60" height="120" fill="#1d4ed8" />
+              <rect x="59.2" y="14" width="1.6" height="92" fill="#ffffff" opacity="0.9" />
             </g>
-            <circle cx="70" cy="70" r="2.6" fill="#ffffff" opacity="0.95" />
+            <circle cx="60" cy="60" r="58" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.95" />
+            <path d="M60 36 c-5.5-4.25-11-8.2-11-13.5 C49 17 54 14 60 14 s11 3 11 8.5 c0 5.3-5.5 9.25-11 13.5z" fill="#ffffff" />
+            <g transform="translate(0,18)">
+              <circle cx="46" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <circle cx="74" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <path d="M38 74a9 9 0 0 1 9-9" stroke="#e91e78" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+              <path d="M82 74a9 9 0 0 0-9-9" stroke="#1d4ed8" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+            </g>
           </svg>
         </div>
         <div class="logo-text">
@@ -100,21 +103,25 @@
 
     <!-- Tela de resultado -->
     <section id="result-screen" class="card hidden" aria-hidden="true">
-      <!-- Upgraded logo in HTML/SVG (no external files) -->
+      <!-- Refined logo in HTML/SVG (no external files) -->
       <div class="site-logo" aria-label="Casal na Medida Certa">
         <div class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="110" height="110">
-            <path d="M70 0 A70 70 0 0 0 70 140 L70 0 Z" fill="#e91e78" />
-            <path d="M70 0 A70 70 0 0 1 70 140 L70 0 Z" fill="#1d4ed8" />
-            <circle cx="70" cy="70" r="62" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.95" />
-            <path d="M70 86c-7-5.3-14-10.5-14-17.5C56 56 62 51 70 51s14 5 14 17.5c0 7-7 12.2-14 17.5z" fill="#ffffff" stroke="#e91e78" stroke-width="2" />
-            <g transform="translate(0,8)" stroke-linecap="round">
-              <circle cx="56" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <circle cx="84" cy="98" r="10" fill="none" stroke="#ffffff" stroke-width="3.2" />
-              <path d="M46 98a10 10 0 0 1 10-10" stroke="#e91e78" stroke-width="2.2" fill="none" opacity="0.95" />
-              <path d="M94 98a10 10 0 0 0-10-10" stroke="#1d4ed8" stroke-width="2.2" fill="none" opacity="0.95" />
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" width="100" height="100">
+            <clipPath id="circle-clip-3"><circle cx="60" cy="60" r="58"/></clipPath>
+            <g clip-path="url(#circle-clip-3)">
+              <rect x="0" y="0" width="60" height="120" fill="#e91e78" />
+              <rect x="60" y="0" width="60" height="120" fill="#1d4ed8" />
+              <rect x="59.2" y="14" width="1.6" height="92" fill="#ffffff" opacity="0.9" />
             </g>
-            <circle cx="70" cy="70" r="2.6" fill="#ffffff" opacity="0.95" />
+            <circle cx="60" cy="60" r="58" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.95" />
+            <path d="M60 36 c-5.5-4.25-11-8.2-11-13.5 C49 17 54 14 60 14 s11 3 11 8.5 c0 5.3-5.5 9.25-11 13.5z" fill="#ffffff" />
+            <g transform="translate(0,18)">
+              <circle cx="46" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <circle cx="74" cy="74" r="9" fill="none" stroke="#ffffff" stroke-width="3" />
+              <path d="M38 74a9 9 0 0 1 9-9" stroke="#e91e78" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+              <path d="M82 74a9 9 0 0 0-9-9" stroke="#1d4ed8" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round" />
+            </g>
+            <circle cx="60" cy="60" r="2.6" fill="#ffffff" opacity="0.95" />
           </svg>
         </div>
         <div class="logo-text">
