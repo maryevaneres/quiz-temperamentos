@@ -42,45 +42,57 @@ body{
   margin: 0 auto 24px auto;
 }
 
-/* Polished site-logo component (SVG/CSS, no external image) */
+/* Text-only site-logo (clean, horizontal on desktop, stacked on mobile) */
 .site-logo{
   display:flex;
   align-items:center;
-  gap:16px;
-  justify-content:flex-start; /* icon left, text right on desktop */
+  justify-content:center;
   margin:0 auto 18px auto;
-  max-width:100%;
+  width:100%;
 }
-.logo-mark{
-  width:100px;
-  height:100px;
-  flex:0 0 100px;
-  display:flex;
+
+.logo-text{
+  display:inline-flex;
+  gap:8px;
   align-items:center;
   justify-content:center;
-  filter: drop-shadow(0 6px 12px rgba(11,43,74,0.12));
+  white-space:nowrap; /* keep in single line on desktop */
 }
-.logo-text{ 
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-  text-align:left;
-}
+
 .logo-small{
-  font-size:12px;
-  font-weight:700;
+  font-size:13px;
+  font-weight:600;
   color:var(--blue);
-  letter-spacing:1px;
+  letter-spacing:0.8px;
   text-transform:uppercase;
 }
+
+.logo-sep{ color:var(--muted); opacity:0.7; }
+
 .logo-main{
   font-size:22px;
   font-weight:800;
   color:var(--blue);
-  display:block;
+  display:inline-block;
   line-height:1;
 }
+
 .logo-main.pink{ color:var(--pink); }
+
+/* Slightly larger presence on wider viewports */
+@media (min-width:480px){
+  .logo-text{ gap:12px; }
+  .logo-small{ font-size:13px; }
+  .logo-main{ font-size:26px; }
+}
+
+/* Mobile: allow wrapping and stacked layout */
+@media (max-width:420px){
+  .logo-text{ white-space:normal; flex-direction:row; flex-wrap:wrap; gap:6px; }
+  .logo-text span{ display:inline-block; }
+  .logo-small{ font-size:11px; text-align:center; }
+  .logo-main{ font-size:18px; text-align:center; }
+}
 
 /* Cards */
 .card{
@@ -194,20 +206,3 @@ body{
 
 /* Footer */
 .footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:6px;}
-
-/* Responsive tweaks */
-@media (min-width:480px){
-  .site-logo{ gap:16px; margin-bottom:20px; }
-  .logo-mark{ width:110px; height:110px; flex:0 0 110px; }
-  .logo-main{ font-size:26px; }
-}
-@media (max-width:420px){
-  .site-logo{ flex-direction:column; gap:8px; justify-content:center; }
-  .logo-mark{ width:64px; height:64px; flex:0 0 64px; }
-  .logo-main{ font-size:18px; text-align:center; }
-  .logo-small{ font-size:11px; text-align:center;}
-  .logo-text{ align-items:center; }
-  .card{padding:14px;border-radius:12px}
-  .title{font-size:18px}
-  .answer-btn{font-size:14px;padding:10px}
-}
