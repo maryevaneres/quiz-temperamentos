@@ -32,66 +32,62 @@ body{
   max-width:480px;
 }
 
-/* Deprecated .screen-logo kept for compatibility */
-.screen-logo{
-  display: block;
-  width: 220px;
-  max-width: 75%;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto 24px auto;
-}
-
-/* Text-only site-logo (clean, horizontal on desktop, stacked on mobile) */
+/* Text-only stacked site-logo (two lines) */
 .site-logo{
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   margin:0 auto 18px auto;
-  width:100%;
+  text-align:center;
 }
 
-.logo-text{
-  display:inline-flex;
+.logo-top{
+  display:flex;
   gap:8px;
   align-items:center;
   justify-content:center;
-  white-space:nowrap; /* keep in single line on desktop */
 }
 
-.logo-small{
-  font-size:13px;
-  font-weight:600;
-  color:var(--blue);
-  letter-spacing:0.8px;
-  text-transform:uppercase;
+.logo-bottom{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  margin-top:6px;
 }
 
-.logo-sep{ color:var(--muted); opacity:0.7; }
-
-.logo-main{
-  font-size:22px;
-  font-weight:800;
-  color:var(--blue);
+.logo-word{
   display:inline-block;
   line-height:1;
+  font-weight:600;
+  letter-spacing:0.6px;
 }
 
-.logo-main.pink{ color:var(--pink); }
+.logo-word.blue{ color:var(--blue); }
+.logo-word.pink{ color:var(--pink); }
+
+.logo-word.big{
+  font-size:26px;
+  font-weight:800;
+}
+
+.logo-word:not(.big){
+  font-size:14px;
+}
 
 /* Slightly larger presence on wider viewports */
 @media (min-width:480px){
-  .logo-text{ gap:12px; }
-  .logo-small{ font-size:13px; }
-  .logo-main{ font-size:26px; }
+  .logo-bottom{ margin-top:8px; }
+  .logo-word.big{ font-size:32px; }
+  .logo-word{ font-size:15px; }
 }
 
-/* Mobile: allow wrapping and stacked layout */
+/* Mobile: keep stacked and proportional */
 @media (max-width:420px){
-  .logo-text{ white-space:normal; flex-direction:row; flex-wrap:wrap; gap:6px; }
-  .logo-text span{ display:inline-block; }
-  .logo-small{ font-size:11px; text-align:center; }
-  .logo-main{ font-size:18px; text-align:center; }
+  .logo-bottom{ margin-top:6px; }
+  .logo-word.big{ font-size:20px; }
+  .logo-word{ font-size:12px; }
 }
 
 /* Cards */
